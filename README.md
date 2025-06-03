@@ -13,9 +13,9 @@ docker pull nvcr.io/nvidia/pytorch:25.03-py3
 # use the container version in the previous month of megatron release
 
 docker run --gpus all --ipc=host -it --rm \
-  -v </path/to/megatron>:/workspace/megatron \
-  -v </path/to/dataset>:/workspace/dataset \
-  -v </path/to/checkpoints>:/workspace/checkpoints \
+  -v /path/to/megatron:/workspace/megatron \
+  -v /path/to/dataset:/workspace/dataset \
+  -v /path/to/checkpoints:/workspace/checkpoints \
   nvcr.io/nvidia/pytorch:25.03-py3
 </pre>
 Note: use `--net host` may cause errors in NCCL.
